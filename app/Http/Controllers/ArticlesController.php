@@ -26,8 +26,8 @@ class ArticlesController extends Controller
     {
 //        dd('index');
 
-//        $articles = Article::latest('published_at')->published()->get();
-        $articles = Article::latest('created_at')->get();
+        $articles = Article::latest('published_at')->published()->get();
+//        $articles = Article::latest('created_at')->get();
 
         return view('articles.index', compact('articles'));
 

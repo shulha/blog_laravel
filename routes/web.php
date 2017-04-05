@@ -32,6 +32,10 @@ Route::post('articles', 'ArticlesController@store');
 Route::get('articles/{id}/edit', 'ArticlesController@edit');
 */
 
+//Route::get('tags', 'TagsController@index');
+Route::get('tags/{tags}', 'TagsController@show');
+
+
 Route::get('foo', ['middleware' => 'manager', function()
 {
     return 'this page may only be viewed by managers';

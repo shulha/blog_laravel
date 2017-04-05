@@ -21,6 +21,11 @@ class Article extends Model
         $this->attributes['published_at'] = Carbon::parse($date);
     }
 
+    public function getPublishedAtAttribute($date)
+    {
+        return Carbon::parse($date)->format('Y-m-d');
+    }
+
     public function scopePublished($query)
     {
         $query->where('published_at', '<=', Carbon::now());
